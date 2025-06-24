@@ -195,20 +195,19 @@ function handleNew() {
             }`}>
             TIMER
           </button>
-
-          <button onClick={()=>handleShortBreak(300)} className={`p-5 rounded-3xl text-[20px] font-bold h-[30%] w-[30%] ${theme === 'light-theme'
+          {no.current >=2 ?           <button onClick={()=>handleShortBreak(300)} className={`p-5 rounded-3xl text-[20px] font-bold h-[30%] w-[30%] ${theme === 'light-theme'
             ? 'bg-red-500 hover:bg-red-600 hover:scale-105 active:scale-95 text-white shadow-lg transition-all duration-300 ease-in-out'
             : 'bg-blue-400 hover:bg-blue-500 hover:scale-105 active:scale-95 text-white shadow-lg transition-all duration-300 ease-in-out'
             }`}>
             SHORT BREAK
-          </button>
-
-          <button onClick={()=>handleLongBreak(600)} className={`p-5 rounded-3xl text-[20px] font-bold h-[30%] w-[30%] ${theme === 'light-theme'
+          </button> : " "}
+          {no.current >=4 ?           <button onClick={()=>handleLongBreak(600)} className={`p-5 rounded-3xl text-[20px] font-bold h-[30%] w-[30%] ${theme === 'light-theme'
             ? 'bg-red-500 hover:bg-red-600 hover:scale-105 active:scale-95 text-white shadow-lg transition-all duration-300 ease-in-out'
             : 'bg-blue-400 hover:bg-blue-500 hover:scale-105 active:scale-95 text-white shadow-lg transition-all duration-300 ease-in-out'
             }`}>
             LONG BREAK
-          </button>
+          </button> : "" }
+
         </div>
       )}
 
