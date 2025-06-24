@@ -1,0 +1,12 @@
+.custom-checkbox:checked::after {
+  content: '✓';
+  color: white;
+  font-weight: 600; /* Medium-bold for standard tick look */
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+}

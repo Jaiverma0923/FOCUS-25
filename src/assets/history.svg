@@ -1,0 +1,18 @@
+<svg
+  class="h-10 w-10"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+>
+  <!-- Circular red arrow -->
+  <path
+    d="M256 48C141.1 48 48 141.1 48 256H16l48 48 48-48H80c0-97 79-176 176-176s176 79 176 176-79 176-176 176c-48.6 0-92.1-21.6-121.6-56l-33.9 33.5C132.2 440.7 191.3 472 256 472c114.9 0 208-93.1 208-208S370.9 48 256 48z"
+    fill="#d6555b"
+  />
+
+  <!-- Vertical clock hand (thickness = 16px) -->
+  <rect x="248" y="120" width="16" height="136" fill="#2e2e2e" rx="3"/>
+
+  <!-- Horizontal clock hand (thickness = 16px) -->
+  <rect x="256" y="248" width="100" height="16" fill="#2e2e2e" rx="3"/>
+</svg>
