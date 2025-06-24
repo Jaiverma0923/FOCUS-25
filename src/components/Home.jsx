@@ -162,7 +162,7 @@ const Home = () => {
                 ? "bg-gradient-to-br from-[#f0f4f8] to-[#e2e8f0] text-gray-800 border-gray-300/40"
                 : "bg-gradient-to-br from-[#1f2937] to-[#111827] text-white border-white/20"}`}>
 
-              <div className='py-5 px-5 h-full flex flex-col items-center gap-2 blur-md hover:blur-none transition-all duration-300 ease-in-out '>
+              <div className='py-5 px-5 h-full overflow-hidden flex flex-col items-center gap-2 blur-md hover:blur-none transition-all duration-300 ease-in-out '>
                 <h1 className='font-bold text-3xl '>📈 Task Progress</h1>
                 <div className="w-full max-w-md text-[16px] font-medium space-y-1 ">
 
