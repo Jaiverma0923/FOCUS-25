@@ -12,7 +12,7 @@ A minimal and beautifully designed productivity timer app inspired by the Pomodo
 - 🗂️ Simple task management
 - 🌓 Light/Dark theme toggle
 - 💾 Saves timer/task state in localStorage
-- 📱 Fully responsive for mobile and desktop
+- 📱 Fully responsive for desktop(will be responsive for mobile in few days)
 
 ---
 
