@@ -98,6 +98,7 @@ const Home = () => {
 
       toast.success("Task added");
       setTask('');
+
     }
   }
   return (
