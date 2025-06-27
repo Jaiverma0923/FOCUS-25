@@ -95,13 +95,27 @@ function handleNew() {
     }
   }
 }
-  function handleTimer() {
-    timestop.current = setInterval(() => {
-      setTimer(t => (t > 0 ? t - 1 : t))
-    }, 1000);
-    setStop("stop");
-    setisVisible(true);
-  }
+const startTime = useRef(null); // stores when timer started
+const remainingTime = useRef(timer); // stores time left when paused
+
+function handleTimer() {
+  startTime.current = Date.now();
+  
+  timestop.current = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - startTime.current) / 1000);
+    const newTime = remainingTime.current - elapsed;
+
+    setTimer(newTime > 0 ? newTime : 0);
+
+    if (newTime <= 0) {
+      clearInterval(timestop.current);
+      timestop.current = null;
+    }
+  }, 500); // faster interval for accuracy
+
+  setStop("stop");
+  setisVisible(true);
+}
   useEffect(() => {
     if (b !== 0 && vis.vis && vis.status === "stop") {
       handleTimer();
@@ -121,16 +135,20 @@ function handleNew() {
   dispatch(addtimer(t));
 }, [isVisible, stop, timer,breakVisible,sb,lb]);
 
-  function pause() {
-    if (stop === "stop") {
-      clearInterval(timestop.current);
-      timestop.current = null;
-      setStop("start")
-    }
-    else {
-      handleTimer();
-    }
+function pause() {
+  if (stop === "stop") {
+    clearInterval(timestop.current);
+    timestop.current = null;
+
+    // Update remaining time based on real time
+    const elapsed = Math.floor((Date.now() - startTime.current) / 1000);
+    remainingTime.current = remainingTime.current - elapsed;
+
+    setStop("start");
+  } else {
+    handleTimer(); // resume
   }
+}
   function minsec(t) {
     let a = Math.floor(t / 60) < 10 ? "0" + Math.floor(t / 60) : Math.floor(t / 60);
     let b = Math.floor(t % 60) < 10 ? "0" + Math.floor(t % 60) : Math.floor(t % 60);
